@@ -1,0 +1,37 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);  /* 背景を少し暗くしてモーダルの目立たせる */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+  
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);  /* モーダルを中央に配置 */
+    width: 400px;
+    background-color: #fff;  /* 背景色を適用 */
+    border: 2px solid #000;  /* ボーダー */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);  /* 影を追加 */
+    padding: 16px;  /* パディング (p: 4 相当) */
+    max-height: 80vh;  /* 最大高さを設定 */
+    overflow: auto;  /* コンテンツが多すぎる場合にスクロール可能にする */
+    border-radius: 8px;  /* 少し角を丸くする（オプション） */
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: none;
+    background: transparent;
+    font-size: 1.5rem;
+    cursor: pointer;
+}

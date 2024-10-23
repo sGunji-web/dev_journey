@@ -1,0 +1,47 @@
+/.metadata/
+
+
+# --- Frontend (React) ---
+# node_modules フォルダ（依存パッケージ）
+frontend/node_modules/
+
+# ビルドフォルダ
+frontend/build/
+
+# ログファイル
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+
+# 環境変数ファイル（機密情報を含む可能性がある）
+frontend/.env
+
+
+# --- Backend (Spring) ---
+# Maven/Gradle ビルドフォルダ
+backend/target/
+backend/build/
+
+# ローカル環境設定ファイル
+backend/*.log
+backend/*.env
+
+# IDEやエディタの設定ファイル（ローカルに依存する）
+backend/.idea/
+backend/*.iml
+backend/.project
+backend/.classpath
+backend/.settings/
+
+# --- 共通 ---
+# OSやエディタの一時ファイル
+.DS_Store
+Thumbs.db
+
+# バックアップファイル
+*.bak
+*.swp
+
+# バイナリファイル
+*.jar
+*.war
