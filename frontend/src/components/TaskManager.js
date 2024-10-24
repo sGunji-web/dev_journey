@@ -1,4 +1,4 @@
-import React, { useState,useEffect,useRef } from 'react';
+import React, { useState,useEffect } from 'react';
 import TaskTable from './TaskTable';
 import TaskForm from './TaskForm';
 import Modal from './Modal';
@@ -12,7 +12,7 @@ const TaskManager = () => {
     const [task, setTask] = useState(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [users, setUsers] = useState([]);
-    const isMounted = useRef(false);
+    // const isMounted = useRef(false);
     
     // ページ遷移
     const navigate = useNavigate();

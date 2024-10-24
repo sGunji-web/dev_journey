@@ -2,15 +2,17 @@
 import React, { useState,useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'
 import axiosInstance from '../axios';
+import { Box, Button, TextField, Typography } from '@mui/material';
 
 
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const navigate = useNavigate();  // ページ遷移に使う
+  const navigate = useNavigate();
 
   useEffect(() => {
-    localStorage.removeItem('token');  // ローカルストレージからトークンを削除
+    // ローカルストレージからトークンを削除
+    localStorage.removeItem('token');
   })
 
   const handleLogin = async () => {
@@ -22,7 +24,8 @@ const Login = () => {
       },
       {
         headers: {
-          'Content-Type': 'application/json'  // リクエストがJSON形式であることを指定
+          // リクエストがJSON形式であることを指定
+          'Content-Type': 'application/json'
         }
       });
       
@@ -39,22 +42,43 @@ const Login = () => {
   };
 
   return (
-    <div>
-      <h2>Login</h2>
-      <input
-        type="text"
-        placeholder="Username"
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: '100vh',
+        padding: 2,
+        bgcolor: '#f5f5f5',
+      }}
+    >
+      <Typography variant="h4" gutterBottom>
+        Login
+      </Typography>
+      <TextField
+        label="Username"
+        variant="outlined"
         value={username}
         onChange={(e) => setUsername(e.target.value)}
+        margin="normal"
       />
-      <input
+      <TextField
         type="password"
-        placeholder="Password"
+        label="Password"
+        variant="outlined"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
+        margin="normal"
       />
-      <button onClick={handleLogin}>Login</button>
-    </div>
+      <Button 
+        onClick={handleLogin}
+        variant="contained"
+        color="primary"
+        sx={{ mt: 2 }}
+      >Login
+      </Button>
+    </Box>
   );
 };
 

@@ -45,3 +45,6 @@ Thumbs.db
 # バイナリファイル
 *.jar
 *.war
+
+
+Servers/.project
